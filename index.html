@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grocery List</h1>
+      <!-- form menu -->
+      <div class="form_menu">
+        <form class="item">
+          <ul class="form_lists">
+            <li>
+              <input
+                type="text"
+                id="add_item"
+                autocomplete="off"
+                placeholder="Add New Item"
+              />
+            </li>
+            <li>
+              <input
+                type="number"
+                id="add_num"
+                autocomplete="off"
+                placeholder="Add QUantity"
+              />
+            </li>
+            <button class="add">Add</button>
+          </ul>
+        </form>
+      </div>
+      <!-- list -->
+      <div class="main">
+        <ul class="list">
+          <!-- <p>Add some items!</p> -->
+          <li class="list_item">
+            <input type="checkbox" id="check" />
+            <!-- <button class="plus">+</button>
+            <button class="minus">-</button> -->
+          </li>
+          <li class="delete">
+            <span class="delete_icon">ゴミ箱</span>
+          </li>
+        </ul>
+      </div>
+      <button>Clear all of the list</button>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

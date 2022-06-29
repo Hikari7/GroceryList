@@ -1,0 +1,78 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #fcf5dd;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  text-align: center;
+  margin-left: 16px;
+  margin: 56px auto;
+  width: 500px;
+  outline: pink 2px solid;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+.form_menu {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  text-align: center;
+  margin-left: 16px;
+  margin: 24px auto;
+  width: calc(100% - 56px);
+  background-color: #baee91;
+  border-radius: 8px;
+  height: 300px;
+}
+
+.form_lists {
+  display: flex;
+}
+.form_lists li {
+  margin-left: 16px;
+  outline: #f35523 1px solid;
+}
+
+.groucery_list {
+  height: 300px;
+}
+
+.list {
+  display: flex;
+  width: calc(100% - 50px);
+  margin: 0 auto;
+}
+
+.list_item {
+  background-color: #f35523;
+  padding: 8px 56px 8px 8px;
+  width: 60%;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+.list_item .name,
+.list_item .num {
+  padding-left: 16px;
+}
+.list_item .minus {
+  justify-content: right;
+}
+
+.delete {
+  margin-top: 16px;
+  padding-top: 8px;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,89 @@
+// Common
+html {
+  font-size: 62.5%;
+}
+
+@mixin center {
+  text-align: center;
+  margin-left: 16px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  @include center;
+  margin: 56px auto;
+  width: 500px;
+  // outline: pink 2px solid;
+}
+
+//title
+h1 {
+  font-size: 3.4rem;
+}
+
+//form menu
+
+.form_menu {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+//list
+.main {
+  @include center;
+  margin: 24px auto;
+  width: calc(100% - 56px);
+  //   outline: blue 2px solid;
+  background-color: #baee91;
+  border-radius: 8px;
+  height: 300px;
+}
+
+.form_lists {
+  display: flex;
+  li {
+    margin-left: 16px;
+    outline: #f35523 1px solid;
+  }
+}
+
+.groucery_list {
+  height: 300px; //heightどうしよう？？
+}
+
+.list {
+  display: flex;
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.list_item {
+  background-color: #f35523;
+  padding: 8px 56px 8px 8px;
+  width: 60%;
+  margin-top: 16px;
+  border-radius: 8px;
+
+  .name,
+  .num {
+    padding-left: 16px;
+  }
+
+  // .plus,
+  .minus {
+    justify-content: right;
+  }
+}
+
+.delete {
+  margin-top: 16px;
+  padding-top: 8px;
+  align-items: center;
+}
+
+//スタイリングあとでしよう
