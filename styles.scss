@@ -3,6 +3,14 @@ html {
   font-size: 62.5%;
 }
 
+$desktop: 1024px;
+
+@mixin desktop {
+  @media (min-width: ($desktop)) {
+    @content;
+  }
+}
+
 @mixin center {
   text-align: center;
   margin-left: 16px;
@@ -24,31 +32,55 @@ h1 {
   font-size: 3.4rem;
 }
 
-//form menu
+//form area
 
 .form_menu {
+  @include center;
   margin-top: 24px;
   display: flex;
-  justify-content: center;
+  display: inline-block;
+  flex-direction: column;
+
+  input {
+    flex-direction: column;
+    display: inline-block;
+    width: 300px;
+    line-height: 1.6rem;
+    margin-top: 24px;
+    border-bottom: black 1px solid;
+    cursor: pointer;
+  }
+
+  .add {
+    border-bottom: none;
+    margin-top: 24px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: pink;
+  }
+
+  @include desktop {
+    .form_menu {
+      display: flex;
+    }
+    margin-left: 16px;
+  }
+}
+
+#add_item,
+#add_num {
+  text-align: right;
 }
 
 //list
 .main {
   @include center;
-  margin: 24px auto;
+  margin: 36px auto;
   width: calc(100% - 56px);
   //   outline: blue 2px solid;
   background-color: #baee91;
   border-radius: 8px;
   height: 300px;
-}
-
-.form_lists {
-  display: flex;
-  li {
-    margin-left: 16px;
-    outline: #f35523 1px solid;
-  }
 }
 
 .groucery_list {
@@ -64,17 +96,11 @@ h1 {
 
 .list_item {
   background-color: #f35523;
-  padding: 8px 56px 8px 8px;
+  // padding: 8px 56px 8px 8px;
   width: 60%;
   margin-top: 16px;
   border-radius: 8px;
 
-  .name,
-  .num {
-    padding-left: 16px;
-  }
-
-  // .plus,
   .minus {
     justify-content: right;
   }
