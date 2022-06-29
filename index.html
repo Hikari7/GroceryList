@@ -11,30 +11,29 @@
   <body>
     <div class="container">
       <h1>Grocery List</h1>
+
       <!-- form menu -->
-      <div class="form_menu">
-        <form class="item">
-          <ul class="form_lists">
-            <li>
-              <input
-                type="text"
-                id="add_item"
-                autocomplete="off"
-                placeholder="Add New Item"
-              />
-            </li>
-            <li>
-              <input
-                type="number"
-                id="add_num"
-                autocomplete="off"
-                placeholder="Add QUantity"
-              />
-            </li>
-            <button class="add">Add</button>
-          </ul>
-        </form>
-      </div>
+      <form class="form_menu">
+        <input
+          type="text"
+          id="add_item"
+          placeholder="Add New Item"
+          name="form_item"
+          required
+        />
+
+        <input
+          type="number"
+          id="add_num"
+          placeholder="Add QUantity"
+          name="form_num"
+          required
+        />
+
+        <input type="submit" value="Add Item" class="add" />
+        <!-- <button class="add">Add</button> -->
+      </form>
+
       <!-- list -->
       <div class="main">
         <ul class="list">
