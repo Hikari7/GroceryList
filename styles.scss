@@ -43,7 +43,7 @@ h1 {
 
   input {
     flex-direction: column;
-    display: inline-block;
+    display: block;
     width: 300px;
     line-height: 1.6rem;
     margin-top: 24px;
@@ -53,9 +53,12 @@ h1 {
 
   .add {
     border-bottom: none;
-    margin-top: 24px;
+    margin: 24px auto;
     padding: 8px;
     border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    width: 90px;
     background-color: pink;
   }
 
@@ -75,7 +78,7 @@ h1 {
 //list
 .main {
   @include center;
-  margin: 36px auto;
+  margin: 24px auto;
   width: calc(100% - 56px);
   //   outline: blue 2px solid;
   background-color: #baee91;
@@ -96,14 +99,22 @@ h1 {
 
 .list_item {
   background-color: #f35523;
-  // padding: 8px 56px 8px 8px;
   width: 60%;
+  height: 30px;
   margin-top: 16px;
   border-radius: 8px;
+  position: relative;
+}
 
-  .minus {
-    justify-content: right;
-  }
+#check {
+  position: absolute;
+  left: 10%;
+  top:20%;
+  background-color: #404a6e;
+	border-radius: 30%;
+	display: block;
+	height: 16px;
+	width: 16px;
 }
 
 .delete {
