@@ -1,11 +1,13 @@
-const inputAdd = document.getElementById("add_item");
-const inputNum = document.getElementById("add_num");
-const add = document.querySelector(".add");
+const addItems = document.querySelector(".add");
+// const inputName = document.getElementById("item");
+// const inputNum = document.getElementById("add_num");
 const listItem = document.querySelector(".list_item"); // li
 const listLine = document.querySelector(".list"); // ul
 const plus = document.querySelector(".plus");
 const check = document.getElementById("check");
-// const list = [];
+const items = [];
+
+console.log(addItems);
 
 let isInputed = false;
 
@@ -18,25 +20,41 @@ let isInputed = false;
 
 function inputCheck() {
   if (item.form_item.value == "") {
-    alert("Please enter the fields!");
+    alert("Please fill the fields!");
     return false;
   } else {
     return true;
   }
 }
 
-add.addEventListener("click", (e) => {
+function addItem(e) {
   e.preventDefault(); //ページ遷移防ぐ
-  // return inputCheck();
-  //出力はできたけど、、
-  // if (isInputed) {  //入力されていなかったら
-  //   console.log("入力してください");
-  // } else {
-  const itemName = document.createElement("span"); //span of item
-  const itemNum = document.createElement("span"); //span of num
-  itemName.textContent = inputAdd.value;
-  itemNum.textContent = inputNum.value;
-  check.after(itemNum);
-  check.after(itemName);
+  const text = document.querySelector("[name=item]").value; //this=formを指す
+  const num = document.querySelector("[name=num]").value;
+  const item = {
+    text: text,
+    number: num,
+    // done: false,
+  };
+  console.log(item);
+  // items.push(item);
+  // this.reset();
+}
 
-});
+addItems.addEventListener("submit", addItem);
+
+// addItems.addEventListener("click", (e) => {
+//   e.preventDefault(); //ページ遷移防ぐ
+// return inputCheck();
+//出力はできたけど、、
+// if (isInputed) {  //入力されていなかったら
+//   console.log("入力してください");
+// } else {
+//   const itemName = document.createElement("span"); //span of item
+//   const itemNum = document.createElement("span"); //span of num
+//   itemName.textContent = inputName.value;
+//   itemNum.textContent = inputNum.value;
+//   check.after(itemNum);
+//   check.after(itemName);
+
+// });
