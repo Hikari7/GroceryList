@@ -6,45 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Document</title>
   </head>
   <body>
     <div class="container">
       <h1>Grocery List</h1>
-
       <!-- form menu -->
-      <form class="form_menu">
-        <input
-          type="text"
-          id="add_item"
-          placeholder="Add New Item"
-          name="item"
-          required
-        />
-
-        <input
-          type="number"
-          id="add_num"
-          placeholder="Add Quantity"
-          name="num"
-        />
-
-        <input type="submit" value="Add Item" class="add" />
-        <!-- <button class="add">Add</button> -->
-      </form>
-
-      <!-- list -->
-      <div class="main">
-        <ul class="list">
-          <!-- <p>Add some items!</p> -->
-          <li class="list_item">
-            <input type="checkbox" id="check" />
-          </li>
-          <li class="delete">
-            <span class="delete_icon">ゴミ箱</span>
-          </li>
-        </ul>
+      <div class="form_menu">
+        <form class="item">
+          <ul class="form_lists">
+            <li>
+              <input
+                type="text"
+                id="add_item"
+                autocomplete="off"
+                placeholder="Add New Item"
+              />
+            </li>
+            <li>
+              <input
+                type="number"
+                id="add_num"
+                autocomplete="off"
+                placeholder="Add QUantity"
+              />
+            </li>
+            <button class="add">Add</button>
+          </ul>
+        </form>
       </div>
+      <!-- list -->
+      <ul class="list">
+        <!-- <p>Add some items!</p> -->
+      </ul>
       <button>Clear all of the list</button>
     </div>
     <script src="js/main.js"></script>

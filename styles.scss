@@ -3,14 +3,6 @@ html {
   font-size: 62.5%;
 }
 
-$desktop: 1024px;
-
-@mixin desktop {
-  @media (min-width: ($desktop)) {
-    @content;
-  }
-}
-
 @mixin center {
   text-align: center;
   margin-left: 16px;
@@ -32,58 +24,21 @@ h1 {
   font-size: 3.4rem;
 }
 
-//form area
+//form menu
 
 .form_menu {
-  @include center;
   margin-top: 24px;
   display: flex;
-  display: inline-block;
-  flex-direction: column;
+  justify-content: center;
+}
 
-  input {
-    flex-direction: column;
-    display: block;
-    width: 300px;
-    line-height: 1.6rem;
-    margin-top: 24px;
-    border-bottom: black 1px solid;
-    cursor: pointer;
-  }
 
-  .add {
-    border-bottom: none;
-    margin: 24px auto;
-    padding: 8px;
-    border-radius: 8px;
-    text-align: center;
-    align-items: center;
-    width: 90px;
-    background-color: pink;
-  }
-
-  @include desktop {
-    .form_menu {
-      display: flex;
-    }
+.form_lists {
+  display: flex;
+  li {
     margin-left: 16px;
+    outline: #f35523 1px solid;
   }
-}
-
-#add_item,
-#add_num {
-  text-align: right;
-}
-
-//list
-.main {
-  @include center;
-  margin: 24px auto;
-  width: calc(100% - 56px);
-  //   outline: blue 2px solid;
-  background-color: #baee91;
-  border-radius: 8px;
-  height: 300px;
 }
 
 .groucery_list {
@@ -91,36 +46,44 @@ h1 {
 }
 
 .list {
+  display: block;
   display: flex;
   width: calc(100% - 50px);
   margin: 0 auto;
   flex-grow: 1;
+
+  @include center;
+  margin: 24px auto;
+  width: calc(100% - 56px);
+  background-color: #baee91;
+  border-radius: 8px;
+  height: 300px;
 }
 
 .list_item {
+  @include center;
+  display: inline-block;
   background-color: #f35523;
-  width: 60%;
-  height: 30px;
+  width: 280px;
   margin-top: 16px;
   border-radius: 8px;
-  position: relative;
+  height: 30px;
+  display: flex;
+  margin-left: 36px;
+
+  .material-symbols-outlined {
+    display: inline-block;
+    margin-left: 270px;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    color: palevioletred;
+    cursor: pointer;
+  }
+
+  .check {
+    margin-left: 16px;
+  }
 }
 
-#check {
-  position: absolute;
-  left: 10%;
-  top:20%;
-  background-color: #404a6e;
-	border-radius: 30%;
-	display: block;
-	height: 16px;
-	width: 16px;
+.nameSpan {
+  margin-left: 16px;
 }
-
-.delete {
-  margin-top: 16px;
-  padding-top: 8px;
-  align-items: center;
-}
-
-//スタイリングあとでしよう
