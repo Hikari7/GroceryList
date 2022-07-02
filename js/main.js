@@ -1,9 +1,7 @@
 const addBtn = document.querySelector(".add"); //addするボタン
 const inputName = document.getElementById("add_item");
 const inputNum = document.getElementById("add_num");
-// const listItem = document.querySelector(".list_item"); // li
 const lists = document.querySelector(".list"); // ul
-const plus = document.querySelector(".plus");
 const check = document.getElementById("check");
 const items = [];
 

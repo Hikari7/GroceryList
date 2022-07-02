@@ -48,6 +48,7 @@ h1 {
   background-color: #baee91;
   border-radius: 8px;
   min-height: 300px;
+  position: relative;
 }
 .list .input {
   display: flex;
@@ -64,10 +65,12 @@ h1 {
   margin-left: 36px;
 }
 .list .list_item .material-symbols-outlined {
-  margin-left: 80px;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
   color: palevioletred;
   cursor: pointer;
+  position: absolute;
+  right: 15%;
+  margin-top: 5px;
 }
 .list .list_item .check {
   margin-left: 16px;
@@ -76,8 +79,12 @@ h1 {
   margin-left: 16px;
 }
 .list .inputed_name {
-  margin-left: 90px;
+  position: absolute;
+  left: 25%;
+  margin-top: 10px;
 }
 .list .inputed_num {
-  margin-left: 90px;
+  position: absolute;
+  left: 60%;
+  margin-top: 10px;
 }/*# sourceMappingURL=styles.css.map */
