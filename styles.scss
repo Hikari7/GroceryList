@@ -32,7 +32,6 @@ h1 {
   justify-content: center;
 }
 
-
 .form_lists {
   display: flex;
   li {
@@ -47,43 +46,55 @@ h1 {
 
 .list {
   display: block;
-  display: flex;
   width: calc(100% - 50px);
   margin: 0 auto;
   flex-grow: 1;
 
   @include center;
+  padding: 16px;
   margin: 24px auto;
   width: calc(100% - 56px);
   background-color: #baee91;
   border-radius: 8px;
-  height: 300px;
-}
+  min-height: 300px;
+  //overflow-y: scroll;
 
-.list_item {
-  @include center;
-  display: inline-block;
-  background-color: #f35523;
-  width: 280px;
-  margin-top: 16px;
-  border-radius: 8px;
-  height: 30px;
-  display: flex;
-  margin-left: 36px;
-
-  .material-symbols-outlined {
-    display: inline-block;
-    margin-left: 270px;
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-    color: palevioletred;
-    cursor: pointer;
+  .input {
+    display: flex;
   }
 
-  .check {
+  .list_item {
+    @include center;
+
+    background-color: #f35523;
+    width: 280px;
+    margin-top: 16px;
+    border-radius: 8px;
+    height: 30px;
+    display: flex;
+    margin-left: 36px;
+
+    .material-symbols-outlined {
+      margin-left: 80px;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      color: palevioletred;
+      cursor: pointer;
+    }
+
+    .check {
+      margin-left: 16px;
+    }
+  }
+
+  .nameSpan {
     margin-left: 16px;
   }
-}
 
-.nameSpan {
-  margin-left: 16px;
+  .inputed_name {
+    margin-left: 90px;
+  }
+
+  .inputed_num {
+    margin-left: 90px;
+  }
 }

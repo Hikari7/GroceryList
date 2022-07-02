@@ -11,13 +11,19 @@ addBtn.addEventListener("click", (e) => {
   e.preventDefault(); //ページ遷移防ぐ
 
   const listItem = document.createElement("li");
-
+  listItem.classList.add("inputed_info");
+  console.log(inputName);
   listItem.innerHTML = `<li class="list_item">
   <input type="checkbox" class="check" />
-  ${inputName.value},
+  <span class="inputed_name">
+  ${inputName.value}
+  </span>
+  <span class="inputed_num">
   ${inputNum.value}
+  </span>
   <span class="material-symbols-outlined">delete</span>
   </li>`;
+
   inputName.value = "";
   inputNum.value = "";
   lists.appendChild(listItem);

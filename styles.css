@@ -37,23 +37,24 @@ h1 {
 
 .list {
   display: block;
-  display: flex;
   width: calc(100% - 50px);
   margin: 0 auto;
   flex-grow: 1;
   text-align: center;
   margin-left: 16px;
+  padding: 16px;
   margin: 24px auto;
   width: calc(100% - 56px);
   background-color: #baee91;
   border-radius: 8px;
-  height: 300px;
+  min-height: 300px;
 }
-
-.list_item {
+.list .input {
+  display: flex;
+}
+.list .list_item {
   text-align: center;
   margin-left: 16px;
-  display: inline-block;
   background-color: #f35523;
   width: 280px;
   margin-top: 16px;
@@ -62,17 +63,21 @@ h1 {
   display: flex;
   margin-left: 36px;
 }
-.list_item .material-symbols-outlined {
-  display: inline-block;
-  margin-left: 270px;
+.list .list_item .material-symbols-outlined {
+  margin-left: 80px;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
   color: palevioletred;
   cursor: pointer;
 }
-.list_item .check {
+.list .list_item .check {
   margin-left: 16px;
 }
-
-.nameSpan {
+.list .nameSpan {
   margin-left: 16px;
+}
+.list .inputed_name {
+  margin-left: 90px;
+}
+.list .inputed_num {
+  margin-left: 90px;
 }/*# sourceMappingURL=styles.css.map */
