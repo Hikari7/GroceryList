@@ -118,55 +118,70 @@ h1 {
     width: 280px;
     margin-top: 16px;
     border-radius: 8px;
-    height: 45px;
+    min-height: 40px;
     display: flex;
     margin-left: 36px;
     color: #fff4e9;
     position: relative;
 
-    .material-symbols-outlined {
+    @mixin list_icon {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       color: #8d99ae;
-      cursor: pointer;
       position: absolute;
-      right: -20%;
-      margin-top: 5px;
-      transform: translate(-50%,-50%);
       top: 50%;
+      margin-top: 5px;
+      cursor: pointer;
     }
 
+    .delete {
+      @include list_icon;
+      right: -33%;
+      transform: translate(-50%, -50%);
+    }
+
+    .edit {
+      @include list_icon;
+      right: -20%;
+      transform: translate(-50%, -50%);
+    }
+
+    .delete:hover,
+    .edit:hover {
+      opacity: 0.6;
+    }
     .check {
       margin-left: 16px;
     }
-  }
 
-  .nameSpan {
-    margin-left: 16px;
-  }
+    .nameSpan {
+      margin-left: 16px;
+      overflow: normal;
+    }
 
-  .inputed_name {
-    position: absolute;
-    left: 25%;
-    font-size: 2.2rem;
-    overflow: normal;
-    transform: translate(-50%,-50%);
-    top: 50%;
+    .inputed_name {
+      position: absolute;
+      left: 50%;
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      width: 180px;
+      text-align: left;
+      overflow: normal;
 
-  }
+      //✅overfolow効かない
+    }
 
-  .inputed_num {
-    position: absolute;
-    left: 60%;
-    font-size: 2.2rem; 
-    transform: translate(-50%,-50%);
-    top: 50%;
-
+    .inputed_num {
+      position: absolute;
+      left: 88%;
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+      top: 50%;
+    }
   }
 }
 
-
-
-.delete {
+.delete_lists {
   @include button;
   @include center;
   margin: 56px auto;
@@ -175,7 +190,6 @@ h1 {
   width: 120px;
 }
 
-
-.delete:hover {
-  opacity: .2;
+.delete_lists:hover {
+  opacity: 0.8;
 }
