@@ -2,6 +2,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: "Concert One", cursive;
+  background-image: url(../grocery_list/pic/Screen\ Shot\ 2022-07-02\ at\ 11.26.39\ PM.png);
+  background-size: cover;
+  height: 100vh;
+  background-repeat: repeat;
+}
+
 li {
   list-style-type: none;
 }
@@ -14,7 +22,8 @@ li {
 }
 
 h1 {
-  font-size: 3.4rem;
+  font-size: 5.2rem;
+  color: #ffb100;
 }
 
 .form_menu {
@@ -23,12 +32,37 @@ h1 {
   justify-content: center;
 }
 
-.form_lists {
-  display: flex;
-}
 .form_lists li {
+  margin-top: 16px;
   margin-left: 16px;
-  outline: #f35523 1px solid;
+  font-size: 1.5rem;
+  background-color: #ffebc6;
+  padding: 16px;
+  border-radius: 8px;
+}
+.form_lists .add {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  padding: 8px;
+  width: 100px;
+  border-radius: 8px;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: #f194b4;
+  color: #ef233c;
+}
+@media (min-width: 840px) {
+  .form_lists .add {
+    margin-left: 16px;
+  }
+}
+.form_lists .add:hover {
+  opacity: 0.8;
+}
+@media (min-width: 840px) {
+  .form_lists {
+    display: flex;
+  }
 }
 
 .groucery_list {
@@ -42,10 +76,10 @@ h1 {
   flex-grow: 1;
   text-align: center;
   margin-left: 16px;
-  padding: 16px;
+  padding: 20px;
   margin: 24px auto;
   width: calc(100% - 56px);
-  background-color: #baee91;
+  background-color: #006c67;
   border-radius: 8px;
   min-height: 300px;
   position: relative;
@@ -56,21 +90,25 @@ h1 {
 .list .list_item {
   text-align: center;
   margin-left: 16px;
-  background-color: #f35523;
+  background-color: #003844;
   width: 280px;
   margin-top: 16px;
   border-radius: 8px;
-  height: 30px;
+  height: 45px;
   display: flex;
   margin-left: 36px;
+  color: #fff4e9;
+  position: relative;
 }
 .list .list_item .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-  color: palevioletred;
+  color: #8d99ae;
   cursor: pointer;
   position: absolute;
-  right: 15%;
+  right: -20%;
   margin-top: 5px;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
 .list .list_item .check {
   margin-left: 16px;
@@ -81,10 +119,35 @@ h1 {
 .list .inputed_name {
   position: absolute;
   left: 25%;
-  margin-top: 10px;
+  font-size: 2.2rem;
+  overflow: normal;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
 .list .inputed_num {
   position: absolute;
   left: 60%;
-  margin-top: 10px;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.delete {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  padding: 8px;
+  width: 100px;
+  border-radius: 8px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 16px;
+  margin: 56px auto;
+  background-color: #f194b4;
+  color: #ef233c;
+  width: 120px;
+}
+
+.delete:hover {
+  opacity: 0.2;
 }/*# sourceMappingURL=styles.css.map */
