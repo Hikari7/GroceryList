@@ -149,6 +149,11 @@ h1 {
   top: 50%;
 }
 
+input[type=checkbox]:checked + span {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
 .delete_lists {
   margin-top: 20px;
   font-size: 1.6rem;

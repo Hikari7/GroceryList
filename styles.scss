@@ -178,13 +178,18 @@ h1 {
       transform: translate(-50%, -50%);
       top: 50%;
     }
-
   }
 }
 
-.done {
+// .done {
+//   // text-decoration: line-through;
+//   // opacity: .8;
+//   color: red;
+// }
+
+input[type="checkbox"]:checked + span {
   text-decoration: line-through;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .delete_lists {
@@ -199,4 +204,3 @@ h1 {
 .delete_lists:hover {
   opacity: 0.8;
 }
-

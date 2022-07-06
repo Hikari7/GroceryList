@@ -19,7 +19,6 @@ function addList(e) {
     <span class="inputed_num">
     ${inputNum.value}
     </span>
-    </div>
     <span class="material-symbols-outlined delete">delete</span>
     <span class="material-symbols-outlined edit">
     edit_note
@@ -35,12 +34,16 @@ function addList(e) {
 
   lists.append(listItem);
 
-  const checked = document.querySelectorAll(".check").forEach((ch) => {
-    ch.addEventListener("click",() => {
-      console.log("checked!", listItem);
-      listItem.classList.add("done");
-    });
-  });
+  // const checked = document.querySelectorAll(".check").forEach((ch) => {
+  //   ch.addEventListener("click", () => {
+  //     // console.log("checked!", listItem);
+  //     // listItem.classList.add("done");
+  //     document.querySelectorAll(".inputed_name").forEach((el) => {
+  //       console.log(el);
+  //       el.classList.add("done");
+  //     });
+  //   });
+  // });
 
   const deletes = document.querySelectorAll(".delete").forEach((del) => {
     del.addEventListener("click", delBtn);
@@ -51,16 +54,18 @@ function addList(e) {
   });
 }
 
-function checked() {
-  console.log("checked!");
-  //1) made const again to get the list
-  // const beChecked = inputName.value;
-  // beChecked.classList.add("done");
-  // this.classList.add("done");
+// function checked() {
+// console.log("checked!");
+//1) made const again to get the list
+// const beChecked = inputName.value;
+// beChecked.classList.add("done");
+// this.classList.add("done");
 
-  //2) use node
-  
-}
+//2)
+// span.classList.add("done");
+// listItem.classList.add("done");
+// node.classList.add("done");
+// }
 
 function delBtn() {
   // console.log(this.parentNode);
@@ -71,23 +76,23 @@ function delBtn() {
 }
 
 function editBtn(e) {
-  console.log("編集してやるで");
+  console.log("editしてやるで");
   const target = e.target.classList.contains("edit");
-  if (target) {
-    let val = e.target.parentNode.firstChild.innerHTML;
-    // alert(val);
-    e.target.parentNode.innerHTML = `
-  <input type="checkbox" class="check" />
-    <span class="inputed_name">
-    ${inputName.value}
-    </span>
-    <span class="inputed_num">
-    ${inputNum.value}
-    </span>
-    <span class="material-symbols-outlined delete">delete</span>
-    <span class="material-symbols-outlined edit">
-    edit_note
-    </span>
-     `;
-  }
+  // if (target) {
+  //   let val = e.target.parentNode.firstChild.innerHTML;
+  //   // alert(val);
+  //   e.target.parentNode.innerHTML = `
+  // <input type="checkbox" class="check" />
+  //   <span class="inputed_name">
+  //   ${inputName.value}
+  //   </span>
+  //   <span class="inputed_num">
+  //   ${inputNum.value}
+  //   </span>
+  //   <span class="material-symbols-outlined delete">delete</span>
+  //   <span class="material-symbols-outlined edit">
+  //   edit_note
+  //   </span>
+  //    `;
+  // }
 }
