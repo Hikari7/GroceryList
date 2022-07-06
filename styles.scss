@@ -178,7 +178,13 @@ h1 {
       transform: translate(-50%, -50%);
       top: 50%;
     }
+
   }
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: .8;
 }
 
 .delete_lists {
