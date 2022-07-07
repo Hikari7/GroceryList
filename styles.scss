@@ -139,14 +139,14 @@ h1 {
       transform: translate(-50%, -50%);
     }
 
-    .edit {
+    .edit_btn {
       @include list_icon;
       right: -20%;
       transform: translate(-50%, -50%);
     }
 
     .delete:hover,
-    .edit:hover {
+    .edit_btn:hover {
       opacity: 0.6;
     }
     .check {
@@ -177,15 +177,14 @@ h1 {
       font-size: 2.2rem;
       transform: translate(-50%, -50%);
       top: 50%;
+      color: #ffebc6;
     }
+
+    // .inputed_info {
+    //   font-size: 2.2rem;
+    // }
   }
 }
-
-// .done {
-//   // text-decoration: line-through;
-//   // opacity: .8;
-//   color: red;
-// }
 
 input[type="checkbox"]:checked + span {
   text-decoration: line-through;
@@ -203,4 +202,15 @@ input[type="checkbox"]:checked + span {
 
 .delete_lists:hover {
   opacity: 0.8;
+}
+
+// .material-symbols-outlined {
+//   &.saved {
+//   display: none;
+//   }
+// }
+
+.edit_list {
+  // visibility: hidden;
+  display: none;
 }
