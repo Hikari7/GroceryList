@@ -178,11 +178,6 @@ input[type=checkbox]:checked + span {
   opacity: 0.8;
 }
 
-input[type=checkbox]:checked + span {
-  text-decoration: line-through;
-  opacity: 0.8;
-}
-
 .delete_lists {
   margin-top: 20px;
   font-size: 1.6rem;
@@ -203,12 +198,15 @@ input[type=checkbox]:checked + span {
   opacity: 0.8;
 }
 
-.text_edit,
-.num_edit {
-  display: none;
-  color: #ffebc6;
-}
-
-.test {
-  color: red;
+.save {
+  position: absolute;
+  left: 50%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 180px;
+  text-align: left;
+  overflow: normal;
+  color: #fff4e9;
+  pointer-events: none;
 }/*# sourceMappingURL=styles.css.map */

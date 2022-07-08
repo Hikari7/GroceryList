@@ -124,7 +124,7 @@ h1 {
     color: #fff4e9;
     position: relative;
 
-    &.edit_mode{
+    &.edit_mode {
       background-color: #003844b1;
     }
 
@@ -211,11 +211,6 @@ input[type="checkbox"]:checked + span {
   opacity: 0.8;
 }
 
-input[type="checkbox"]:checked + span {
-  text-decoration: line-through;
-  opacity: 0.8;
-}
-
 .delete_lists {
   @include button;
   @include center;
@@ -229,19 +224,15 @@ input[type="checkbox"]:checked + span {
   opacity: 0.8;
 }
 
-// .material-symbols-outlined {
-//   &.saved {
-//   display: none;
-//   }
-// }
-
-.text_edit,
-.num_edit {
-  display: none;
-  color: #ffebc6;
+.save {
+  position: absolute;
+  left: 50%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 180px;
+  text-align: left;
+  overflow: normal;
+  color: #fff4e9;
+  pointer-events: none;
 }
-
-.test {
-  color: red;
-}
-

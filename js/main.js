@@ -37,29 +37,37 @@ function addList(e) {
     del.addEventListener("click", delBtn);
   });
 
-  listItem.childNodes[13].addEventListener("click", editBtn);
+  // console.dir(listItem.childNodes);
+  listItem.childNodes[13].addEventListener("click", editBtn); //NodeListからeditのアイコンを取ってくる
 }
 
 function editBtn() {
-  const currentNode = this.parentNode;
-  const inputedName = currentNode.childNodes[3];
-  const inputedNum = currentNode.childNodes[5];
-  const textEdit = currentNode.childNodes[7];
-  const numEdit = currentNode.childNodes[9];
-
   console.log("I'm editting!");
+  const currentNode = this.parentNode; //liを取ってくる
+  // console.dir(this.parentNode);
+  // console.dir(currentNode.childNodes);
 
-  this.classList.toggle("edit_mode");
+  //↓直接nodeにアクセスしている
+  const inputedName = currentNode.childNodes[3]; //nodeアクセスする
+  const inputedNum = currentNode.childNodes[5]; //span.inputed_num
+  const textEdit = currentNode.childNodes[7]; //input.inputed_name_edit
+  const numEdit = currentNode.childNodes[9]; //<input type="number" class="inputed_num_edit">
 
   inputedName.textContent = "";
   inputedNum.textContent = "";
 
-  if (textEdit.classList[0] === "text_edit") {
+  // console.dir(currentNode.childNodes); //inputed_name_edit
+  console.dir(textEdit.classList[0]);
+
+  if (textEdit.classList[0] === "text_edit") {  //interHTML?
+    //text_edit(テキストを編集する場所と同じだったら)
     textEdit.classList.add("inputed_name_edit");
-    textEdit.classList.remove("text_edit");
+    textEdit.classList.remove("text_edit"); //this is edit mode
   } else {
+    // textEdit.classList.remove("inputed_name_edit"); //this is not edit mode
     textEdit.classList.remove("inputed_name_edit");
     textEdit.classList.add("text_edit");
+    // textEdit.classList.add("save");
     console.log("SAVE");
   }
 
@@ -69,6 +77,7 @@ function editBtn() {
   } else {
     numEdit.classList.remove("inputed_num_edit");
     numEdit.classList.add("num_edit");
+    // console.log("SAVE NUM");
   }
 }
 
@@ -82,9 +91,20 @@ function delBtn() {
 // オブジェクトで収納することもできる
 //(今回はforEachで１つの要素を取ると芋づる式にli全部の要素も取って来てしまう
 //ことになるから、使えなかった)
-//
+
 // const editArgs = { listItem, inputedName, inputedNum, textEdit, numEdit };
-// 
+// ↑のオブジェクトをfunctionの引数に渡せばfunctionの外でこのconstを使うことができる
+//function
+// const edits = document.querySelectorAll(".edit_btn").forEach((edit) => {
+//   edit.addEventListener("click", editBtn(editArgs));みたいな感じで
+// });
+//editArgsはオブジェクトをまとめているだけなので、const editArgsにしなくても、
+//listItem, inputed Name, textEdit, numEditをそれぞれ引数に渡すのもOK
+//constの名前が同じだったら:省略できる
+//const editArgs = {x: listItem,....みたいな}
+//const person = {name:name} = {name}/shorthand
+//
+
 // const edits = document
 //   .querySelector(".edit_btn")
 //   .addEventListener("click", () => editBtn(editArgs));
@@ -107,4 +127,3 @@ function delBtn() {
 //   });
 // });
 // });
-
