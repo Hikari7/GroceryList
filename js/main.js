@@ -53,20 +53,17 @@ function addList(e) {
   const numEdit = document.querySelectorAll(".num_edit");
 
   document.querySelectorAll(".edit_btn").forEach((edit) => {
+    console.log(edit);
     edit.addEventListener("click", () => {
-      inputedName.textContent = "";
-      inputedNum.textContent = "";
       console.log("edit");
       textEdit.forEach(function (el) {
+        inputedName.textContent = "";
         el.classList.remove("text_edit");
-      });
-      textEdit.forEach(function (el) {
         el.classList.add("inputed_name_edit");
       });
       numEdit.forEach(function (el2) {
+        inputedNum.textContent = "";
         el2.classList.remove("num_edit");
-      });
-      numEdit.forEach(function (el2) {
         el2.classList.add("inputed_num_edit");
       });
     });

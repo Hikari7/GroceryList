@@ -187,7 +187,6 @@ h1 {
       font-size: 2.2rem;
       transform: translate(-50%, -50%);
       top: 50%;
-      color: #ffebc6;
       width: 45px;
     }
 
@@ -210,7 +209,7 @@ input[type="checkbox"]:checked + span {
   opacity: 0.8;
 }
 
-input[type="checkbox"]:checked + input {
+input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.8;
 }
