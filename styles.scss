@@ -133,7 +133,7 @@ h1 {
       cursor: pointer;
     }
 
-    .delete {
+    .delete_btn {
       @include list_icon;
       right: -33%;
       transform: translate(-50%, -50%);
@@ -145,7 +145,7 @@ h1 {
       transform: translate(-50%, -50%);
     }
 
-    .delete:hover,
+    .delete_btn:hover,
     .edit_btn:hover {
       opacity: 0.6;
     }
@@ -167,22 +167,41 @@ h1 {
       width: 180px;
       text-align: left;
       overflow: normal;
+    }
 
-      //✅overfolow効かない
+    .inputed_name_edit {
+      position: absolute;
+      left: 50%;
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      width: 180px;
+      text-align: left;
+      overflow: normal;
+      color: #fff4e9;
     }
 
     .inputed_num {
       position: absolute;
-      left: 88%;
+      left: 85%;
       font-size: 2.2rem;
       transform: translate(-50%, -50%);
       top: 50%;
       color: #ffebc6;
+      width: 45px;
     }
 
-    // .inputed_info {
-    //   font-size: 2.2rem;
-    // }
+    .inputed_num_edit {
+      position: absolute;
+      left: 85%;
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      color: #fff4e9;
+      width: 45px;
+    }
+
+  
   }
 }
 
@@ -190,6 +209,13 @@ input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.8;
 }
+
+input[type="checkbox"]:checked + input {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+
 
 .delete_lists {
   @include button;
@@ -210,7 +236,12 @@ input[type="checkbox"]:checked + span {
 //   }
 // }
 
-.edit_list {
-  // visibility: hidden;
+.text_edit,
+.num_edit {
   display: none;
+  color: #ffebc6;
+}
+
+.test {
+  color: red;
 }

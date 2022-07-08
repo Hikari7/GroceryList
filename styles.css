@@ -100,7 +100,7 @@ h1 {
   color: #fff4e9;
   position: relative;
 }
-.list .list_item .delete {
+.list .list_item .delete_btn {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
   color: #8d99ae;
   position: absolute;
@@ -120,7 +120,7 @@ h1 {
   right: -20%;
   transform: translate(-50%, -50%);
 }
-.list .list_item .delete:hover,
+.list .list_item .delete_btn:hover,
 .list .list_item .edit_btn:hover {
   opacity: 0.6;
 }
@@ -141,16 +141,42 @@ h1 {
   text-align: left;
   overflow: normal;
 }
+.list .list_item .inputed_name_edit {
+  position: absolute;
+  left: 50%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 180px;
+  text-align: left;
+  overflow: normal;
+  color: #fff4e9;
+}
 .list .list_item .inputed_num {
   position: absolute;
-  left: 88%;
+  left: 85%;
   font-size: 2.2rem;
   transform: translate(-50%, -50%);
   top: 50%;
   color: #ffebc6;
+  width: 45px;
+}
+.list .list_item .inputed_num_edit {
+  position: absolute;
+  left: 85%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  color: #fff4e9;
+  width: 45px;
 }
 
 input[type=checkbox]:checked + span {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+input[type=checkbox]:checked + input {
   text-decoration: line-through;
   opacity: 0.8;
 }
@@ -175,6 +201,12 @@ input[type=checkbox]:checked + span {
   opacity: 0.8;
 }
 
-.edit_list {
+.text_edit,
+.num_edit {
   display: none;
+  color: #ffebc6;
+}
+
+.test {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */
