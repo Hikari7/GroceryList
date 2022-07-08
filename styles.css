@@ -91,7 +91,7 @@ h1 {
   text-align: center;
   margin-left: 16px;
   background-color: #003844;
-  width: 280px;
+  width: 287px;
   margin-top: 16px;
   border-radius: 8px;
   min-height: 40px;
@@ -154,7 +154,7 @@ h1 {
 }
 .list .list_item .inputed_num {
   position: absolute;
-  left: 85%;
+  left: 82%;
   font-size: 2.2rem;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -162,7 +162,7 @@ h1 {
 }
 .list .list_item .inputed_num_edit {
   position: absolute;
-  left: 85%;
+  left: 88%;
   font-size: 2.2rem;
   transform: translate(-50%, -50%);
   top: 50%;

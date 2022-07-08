@@ -115,7 +115,7 @@ h1 {
     @include center;
 
     background-color: #003844;
-    width: 280px;
+    width: 287px;
     margin-top: 16px;
     border-radius: 8px;
     min-height: 40px;
@@ -183,7 +183,7 @@ h1 {
 
     .inputed_num {
       position: absolute;
-      left: 85%;
+      left: 82%;
       font-size: 2.2rem;
       transform: translate(-50%, -50%);
       top: 50%;
@@ -192,15 +192,13 @@ h1 {
 
     .inputed_num_edit {
       position: absolute;
-      left: 85%;
+      left: 88%;
       font-size: 2.2rem;
       transform: translate(-50%, -50%);
       top: 50%;
       color: #fff4e9;
       width: 45px;
     }
-
-  
   }
 }
 
@@ -213,8 +211,6 @@ input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.8;
 }
-
-
 
 .delete_lists {
   @include button;
@@ -244,3 +240,8 @@ input[type="checkbox"]:checked + span {
 .test {
   color: red;
 }
+
+// .toggle {
+//   display: none;
+//   inner<span class="material-symbols-outlined">done</span>`;
+// }
