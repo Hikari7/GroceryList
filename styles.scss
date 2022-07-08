@@ -124,6 +124,10 @@ h1 {
     color: #fff4e9;
     position: relative;
 
+    &.edit_mode{
+      background-color: #003844b1;
+    }
+
     @mixin list_icon {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       color: #8d99ae;
@@ -241,7 +245,3 @@ input[type="checkbox"]:checked + span {
   color: red;
 }
 
-// .toggle {
-//   display: none;
-//   inner<span class="material-symbols-outlined">done</span>`;
-// }

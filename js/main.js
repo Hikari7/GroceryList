@@ -9,6 +9,7 @@ addBtn.addEventListener("click", addList);
 
 function addList(e) {
   e.preventDefault();
+
   const listItem = document.createElement("li"); //create "li" element
   const items = [
     (listItem.innerHTML = `
@@ -36,66 +37,74 @@ function addList(e) {
     del.addEventListener("click", delBtn);
   });
 
-  const inputedName = document.querySelector(".inputed_name");
-  const inputedNum = document.querySelector(".inputed_num");
-  const textEdit = document.querySelectorAll(".text_edit");
-  const numEdit = document.querySelectorAll(".num_edit");
+  listItem.childNodes[13].addEventListener("click", editBtn);
+}
 
- 
+function editBtn() {
+  const currentNode = this.parentNode;
+  const inputedName = currentNode.childNodes[3];
+  const inputedNum = currentNode.childNodes[5];
+  const textEdit = currentNode.childNodes[7];
+  const numEdit = currentNode.childNodes[9];
 
-  // const edits = e.target.classList.contains(".edit_btn").forEach((edit) => {
-  //   edit.addEventListener("click", editBtn);
-  // });
+  console.log("I'm editting!");
 
+  this.classList.toggle("edit_mode");
 
-  const edits = document.querySelectorAll(".edit_btn").forEach((edit) => {
-    edit.addEventListener("click", editBtn);
-  });
+  inputedName.textContent = "";
+  inputedNum.textContent = "";
 
-  function editBtn() {
-   
-    console.log("I'm editting!");
-    textEdit.forEach(function (el) {
-      inputedName.textContent = "";
-      el.classList.toggle("text_edit");
-      el.classList.toggle("inputed_name_edit");
-    });
-    numEdit.forEach(function (el2) {
-      inputedNum.textContent = "";
-      el2.classList.toggle("num_edit");
-      el2.classList.toggle("inputed_num_edit");
-    });
+  if (textEdit.classList[0] === "text_edit") {
+    textEdit.classList.add("inputed_name_edit");
+    textEdit.classList.remove("text_edit");
+  } else {
+    textEdit.classList.remove("inputed_name_edit");
+    textEdit.classList.add("text_edit");
+    console.log("SAVE");
   }
 
-  // const edits = document.querySelectorAll(".edit_btn");
-  // edits.forEach(function (edit) {
-  //   // console.log(edit);
-  //   edit.addEventListener("click", () => {
-  //     console.log("edit");
-  //     edit.innerHTML = `<span class="material-symbols-outlined">done</span>`;
-
-  //     textEdit.forEach(function (el) {
-  //       inputedName.textContent = "";
-  //       el.classList.toggle("text_edit");
-  //       el.classList.toggle("inputed_name_edit");
-  //     });
-  //     numEdit.forEach(function (el2) {
-  //       inputedNum.textContent = "";
-  //       el2.classList.toggle("num_edit");
-  //       el2.classList.toggle("inputed_num_edit");
-  //     });
-  //   });
-    // edit.forEach("click", (ed) => {
-    //   edit.addEventListener("click"),
-    //     () => {
-    //       edit.innerHTML = `<span class="material-symbols-outlined edit_btn">edit_note</span>`;
-    //     };
-    // });
-  // });
+  if (numEdit.classList[0] === "num_edit") {
+    numEdit.classList.add("inputed_num_edit");
+    numEdit.classList.remove("num_edit");
+  } else {
+    numEdit.classList.remove("inputed_num_edit");
+    numEdit.classList.add("num_edit");
+  }
 }
 
 function delBtn() {
-  console.log("I'm deleting!");
-  // lists.removeChild(this.parentNode); //parentNode = "ul"
+  console.log("I'm deleting now!");
+  lists.removeChild(this.parentNode); //parentNode = "ul"
   //ちなみにアロー関数で定義すると、定義した時点でどこから呼ばれたかで指すthisが決まる
 }
+
+//
+// オブジェクトで収納することもできる
+//(今回はforEachで１つの要素を取ると芋づる式にli全部の要素も取って来てしまう
+//ことになるから、使えなかった)
+//
+// const editArgs = { listItem, inputedName, inputedNum, textEdit, numEdit };
+// 
+// const edits = document
+//   .querySelector(".edit_btn")
+//   .addEventListener("click", () => editBtn(editArgs));
+
+// const edits = document.querySelectorAll(".edit_btn");
+// edits.forEach(function (edit) {
+//   console.log("I'm editting now!");
+// edit.addEventListener("click", () => {
+//   console.log("edit");
+//   // edit.innerHTML = `<span class="material-symbols-outlined">done</span>`;
+//   textEdit.forEach(function (el) {
+//     inputedName.textContent = "";
+//     el.classList.toggle("text_edit");
+//     el.classList.toggle("inputed_name_edit");
+//   });
+//   numEdit.forEach(function (el2) {
+//     inputedNum.textContent = "";
+//     el2.classList.toggle("num_edit");
+//     el2.classList.toggle("inputed_num_edit");
+//   });
+// });
+// });
+
