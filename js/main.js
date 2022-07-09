@@ -20,7 +20,7 @@ function addList(e) {
     <span class="inputed_num">  
     ${inputNum.value}
     </span>
-          <input type="text" class ="text_edit"/>
+          <input type="text" class ="text_edit"/>　
           <input type="number"  class ="num_edit"/>
     <span class="material-symbols-outlined delete_btn">delete</span>
     <span class="material-symbols-outlined edit_btn">edit_note</span>
@@ -38,47 +38,58 @@ function addList(e) {
   });
 
   // console.dir(listItem.childNodes);
-  listItem.childNodes[13].addEventListener("click", editBtn); //NodeListからeditのアイコンを取ってくる
+  listItem.childNodes[13].addEventListener("click", editBtn); //listItemの13番目のchildNode
+  //NodeListからeditのアイコンを取ってくる
+  //forEachだったら他の要素も芋づる式にとって来ちゃうので
+
+  // const editArgs = { listItem, inputedName, inputedNum, textEdit, numEdit };
+  const delAll = document.querySelector(".delete_lists");
+  delAll.addEventListener("click", deleteAll);
+
+  // const delAll = document
+  // .querySelector(".delete_lists")
+  // .addEventListener("click", () => delAll(editArgs));
 }
 
 function editBtn() {
-  console.log("I'm editting!");
-  const currentNode = this.parentNode; //liを取ってくる
-  // console.dir(this.parentNode);
-  // console.dir(currentNode.childNodes);
+  const currentNode = this.parentNode; //liを取ってくる childNodes[13]のparentNodeはliなので
 
   //↓直接nodeにアクセスしている
   const inputedName = currentNode.childNodes[3]; //nodeアクセスする
   const inputedNum = currentNode.childNodes[5]; //span.inputed_num
+
+  //editした時用
   const textEdit = currentNode.childNodes[7]; //input.inputed_name_edit
   const numEdit = currentNode.childNodes[9]; //<input type="number" class="inputed_num_edit">
+  const editBtn = currentNode.childNodes[13];
+  // console.dir(currentNode.childNodes);
 
   inputedName.textContent = "";
   inputedNum.textContent = "";
 
   // console.dir(currentNode.childNodes); //inputed_name_edit
-  console.dir(textEdit.classList[0]);
+  // console.dir(textEdit.classList[0]);
 
-  if (textEdit.classList[0] === "text_edit") {  //interHTML?
+  if (textEdit.classList[0] === "text_edit") {
+    //inputタグの部分
+    //textEdit(innerHTML)のクラスの０番目を取ってる（classListでも配列にすればそのn番目を取得できる）
     //text_edit(テキストを編集する場所と同じだったら)
     textEdit.classList.add("inputed_name_edit");
-    textEdit.classList.remove("text_edit"); //this is edit mode
+    textEdit.classList.remove("text_edit"); //inputタグの部分
+    numEdit.classList.add("inputed_num_edit"); //追加のinputタグがaddされる
+    numEdit.classList.remove("num_edit"); //大元のspanタグのinputed_numがremoveされる
+    editBtn.innerHTML = `<span class="material-symbols-outlined">done</span>`;
   } else {
-    // textEdit.classList.remove("inputed_name_edit"); //this is not edit mode
     textEdit.classList.remove("inputed_name_edit");
     textEdit.classList.add("text_edit");
-    // textEdit.classList.add("save");
+    numEdit.classList.remove("inputed_num_edit");
+    numEdit.classList.add("inputed_num");
+    textEdit.classList.add("save_text");
+    editBtn.innerHTML = `<span class="material-symbols-outlined">edit_note</span>`;
     console.log("SAVE");
   }
 
-  if (numEdit.classList[0] === "num_edit") {
-    numEdit.classList.add("inputed_num_edit");
-    numEdit.classList.remove("num_edit");
-  } else {
-    numEdit.classList.remove("inputed_num_edit");
-    numEdit.classList.add("num_edit");
-    // console.log("SAVE NUM");
-  }
+  //3回目でtoggleなくなっちゃう
 }
 
 function delBtn() {
@@ -87,7 +98,27 @@ function delBtn() {
   //ちなみにアロー関数で定義すると、定義した時点でどこから呼ばれたかで指すthisが決まる
 }
 
-//
+function deleteAll() {
+  // const children = lists.childNodes;
+  // console.log(children);
+
+  // for (let i = 0; i < children.length; i++) {
+  //   // lists.removeChild(children[i]);
+  //   console.log(children[i]);
+  // }
+  while(lists.lastChild){
+    lists.removeChild(lists.lastChild);
+  }
+
+
+  // console.log(lists.childNodes.length);
+  // remove.lists.children;
+  // console.log(parentNode);
+  // lists.remove(this.parentNode);
+  // console.dir(lists.childNodes);
+}
+
+//👇メモ
 // オブジェクトで収納することもできる
 //(今回はforEachで１つの要素を取ると芋づる式にli全部の要素も取って来てしまう
 //ことになるから、使えなかった)

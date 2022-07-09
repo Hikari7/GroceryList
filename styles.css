@@ -157,11 +157,12 @@ h1 {
 }
 .list .list_item .inputed_num {
   position: absolute;
-  left: 82%;
+  left: 85%;
   font-size: 2.2rem;
   transform: translate(-50%, -50%);
   top: 50%;
   width: 45px;
+  color: #fff4e9;
 }
 .list .list_item .inputed_num_edit {
   position: absolute;
@@ -198,7 +199,7 @@ input[type=checkbox]:checked + span {
   opacity: 0.8;
 }
 
-.save {
+.save_text {
   position: absolute;
   left: 50%;
   font-size: 2.2rem;
@@ -209,4 +210,18 @@ input[type=checkbox]:checked + span {
   overflow: normal;
   color: #fff4e9;
   pointer-events: none;
+}
+
+.save_num {
+  position: absolute;
+  left: 88%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  color: #fff4e9;
+  width: 45px;
+}
+
+.red {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */
