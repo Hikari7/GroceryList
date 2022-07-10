@@ -4,6 +4,11 @@ const inputNum = document.getElementById("add_num");
 const lists = document.querySelector(".list"); // ul
 // const editList = document.querySelector('.edit_list')
 
+// function inputValue() {
+//   const stored = inputName.value;
+
+// }
+
 //functionは外だったら反映するので、一旦引数に渡して外で内容を書いていく
 addBtn.addEventListener("click", addList);
 
@@ -20,7 +25,7 @@ function addList(e) {
     <span class="inputed_num">  
     ${inputNum.value}
     </span>
-          <input type="text" class ="text_edit"/>　
+          <input type="text" class ="text_edit"/ >　
           <input type="number"  class ="num_edit"/>
     <span class="material-symbols-outlined delete_btn">delete</span>
     <span class="material-symbols-outlined edit_btn">edit_note</span>
@@ -46,14 +51,12 @@ function addList(e) {
   const delAll = document.querySelector(".delete_lists");
   delAll.addEventListener("click", deleteAll);
 
-  // const delAll = document
-  // .querySelector(".delete_lists")
-  // .addEventListener("click", () => delAll(editArgs));
+  //  const outPut = document.querySelector(".output");
+  //  outPut.addEventListener('click', outPutText);
 }
 
 function editBtn() {
   const currentNode = this.parentNode; //liを取ってくる childNodes[13]のparentNodeはliなので
-
   //↓直接nodeにアクセスしている
   const inputedName = currentNode.childNodes[3]; //nodeアクセスする
   const inputedNum = currentNode.childNodes[5]; //span.inputed_num
@@ -62,26 +65,23 @@ function editBtn() {
   const textEdit = currentNode.childNodes[7]; //input.inputed_name_edit
   const numEdit = currentNode.childNodes[9]; //<input type="number" class="inputed_num_edit">
   const editBtn = currentNode.childNodes[13];
-  // console.dir(currentNode.childNodes);
 
-  inputedName.textContent = "";
-  inputedNum.textContent = "";
-
-  // console.dir(currentNode.childNodes); //inputed_name_edit
-  // console.dir(textEdit.classList[0]);
+  // textEdit.setAttribute("readonly", "readonly");
 
   if (textEdit.classList[0] === "text_edit") {
     //inputタグの部分
-    //textEdit(innerHTML)のクラスの０番目を取ってる（classListでも配列にすればそのn番目を取得できる）
-    //text_edit(テキストを編集する場所と同じだったら)
-    textEdit.classList.add("inputed_name_edit");
-    textEdit.classList.remove("text_edit"); //inputタグの部分
+
+    textEdit.classList.remove("inputed_name_edit");
+    inputedName.setAttribute("readonly", "readonly");
+    // textEdit.classList.remove("text_edit"); //inputタグの部分
     numEdit.classList.add("inputed_num_edit"); //追加のinputタグがaddされる
     numEdit.classList.remove("num_edit"); //大元のspanタグのinputed_numがremoveされる
     editBtn.innerHTML = `<span class="material-symbols-outlined">done</span>`;
   } else {
-    textEdit.classList.remove("inputed_name_edit");
-    textEdit.classList.add("text_edit");
+    // textEdit.textContent = "";
+    inputedName.classList.add("inputed_name_edit");
+    // textEdit.classList.add("text_edit");
+    textEdit.removeAttribute("readonly", "readonly");
     numEdit.classList.remove("inputed_num_edit");
     numEdit.classList.add("inputed_num");
     textEdit.classList.add("save_text");
@@ -99,24 +99,14 @@ function delBtn() {
 }
 
 function deleteAll() {
-  // const children = lists.childNodes;
-  // console.log(children);
-
-  // for (let i = 0; i < children.length; i++) {
-  //   // lists.removeChild(children[i]);
-  //   console.log(children[i]);
-  // }
-  while(lists.lastChild){
+  while (lists.lastChild) {
     lists.removeChild(lists.lastChild);
   }
-
-
-  // console.log(lists.childNodes.length);
-  // remove.lists.children;
-  // console.log(parentNode);
-  // lists.remove(this.parentNode);
-  // console.dir(lists.childNodes);
 }
+
+// // function outPutText() {
+
+// }
 
 //👇メモ
 // オブジェクトで収納することもできる

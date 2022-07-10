@@ -212,7 +212,16 @@ input[type="checkbox"]:checked + span {
   opacity: 0.8;
 }
 
-.delete_lists {
+.below_btn {
+  @include center;
+  display: flex;
+  // margin: 0 auto;
+  width: 500px;
+
+}
+
+.delete_lists,
+.output {
   @include button;
   @include center;
   margin: 56px auto;
@@ -238,17 +247,13 @@ input[type="checkbox"]:checked + span {
   pointer-events: none;
 }
 
- .save_num {
+.save_num {
   position: absolute;
-      left: 88%;
-      font-size: 2.2rem;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      color: #fff4e9;
-      width: 45px;
- }
+  left: 88%;
+  font-size: 2.2rem;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  color: #fff4e9;
+  width: 45px;
+}
 
-
- .red {
-  color: red;
- }

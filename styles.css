@@ -179,7 +179,15 @@ input[type=checkbox]:checked + span {
   opacity: 0.8;
 }
 
-.delete_lists {
+.below_btn {
+  text-align: center;
+  margin-left: 16px;
+  display: flex;
+  width: 500px;
+}
+
+.delete_lists,
+.output {
   margin-top: 20px;
   font-size: 1.6rem;
   padding: 8px;
@@ -220,8 +228,4 @@ input[type=checkbox]:checked + span {
   top: 50%;
   color: #fff4e9;
   width: 45px;
-}
-
-.red {
-  color: red;
 }/*# sourceMappingURL=styles.css.map */
